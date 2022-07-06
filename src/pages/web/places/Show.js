@@ -126,6 +126,7 @@ function WebPlaceShow() {
                         <i className="fa fa-map-marker"></i> <i>{place.address}</i>
                       </span>
                       <hr />
+                      <ImageGallery items={images} />
                       <div
                         dangerouslySetInnerHTML={{ __html: place.description }}
                       />
@@ -139,7 +140,13 @@ function WebPlaceShow() {
                         <i className="fa fa-map-marked-alt"></i> MAPS
                       </h5>
                       <hr />
-                    </div>
+                      <div ref={mapContainer} className="map-container" style={{ height: "350px" }}/>
+                      <div className="d-grid gap-2">
+                      <Link to={`/places/${place.slug}/direction?longitude=${place.longitude}&latitude=${place.latitude}`} className="float-end btn btn-success btn-block btn-md mt-3">
+                      <i className="fa fa-location-arrow"></i> OPEN DIRECTION
+                      </Link>
+                      </div>
+                      </div>
                     <hr />
                     <div className="card-body">
                       <div className="row">
