@@ -21,6 +21,7 @@ function Dashboard() {
     const [places, setPlaces] = useState(0);
     const [sliders, setSliders] = useState(0);
     const [users, setUsers] = useState(0);
+    const [reviewratings, setReviewratings] = useState(0);
 
     //token
     const token = Cookies.get('token');
@@ -45,6 +46,7 @@ function Dashboard() {
         setPlaces(data.places);
         setSliders(data.sliders);
         setUsers(data.users);
+        setReviewratings(data.reviewratings);
     }
 
     //hook useEffect
@@ -115,6 +117,21 @@ function Dashboard() {
                                 <div className="text-value text-danger">{users}</div>
                                 <div className="text-muted text-uppercase font-weight-bold small">
                                     USERS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="col-12 col-lg-3 mb-4">
+                    <div className="card border-0 rounded shadow-sm overflow-hidden">
+                        <div className="card-body p-0 d-flex align-items-center">
+                            <div className="bg-danger py-4 px-5 mfe-3" style={{ width: "130px" }}>
+                                <i className="fas fa-comments fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <div className="text-value text-danger">{reviewratings}</div>
+                                <div className="text-muted text-uppercase font-weight-bold small">
+                                    REVIEWRATINGS
                                 </div>
                             </div>
                         </div>

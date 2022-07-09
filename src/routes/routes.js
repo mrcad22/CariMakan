@@ -47,6 +47,9 @@ import UserCreate from '../pages/admin/users/Create';
 //import view admin user Edit
 import UserEdit from '../pages/admin/users/Edit';
 
+//import view admin reviewrating Index
+import ReviewRatingIndex from '../pages/admin/reviewratings/Index';
+
 //=======================================================================
 //WEB
 //=======================================================================
@@ -139,6 +142,11 @@ function Routes() {
             {/* private route "/admin/users/edit/:id" */}
             <PrivateRoute exact path="/admin/users/edit/:id">
                 <UserEdit /> 
+            </PrivateRoute>
+
+            {/* private route "/admin/reviewratings" */}    
+            <PrivateRoute exact path="/admin/reviewratings">
+                <ReviewRatingIndex />
             </PrivateRoute>
 
             {/* route "/" */} 

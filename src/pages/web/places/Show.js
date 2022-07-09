@@ -54,7 +54,6 @@ const ListCommentComponent = ({ comments }) => {
                 <h6><b>{q.name}</b></h6>
                 <div className="d-flex align-items-center">
                   <Rate style={{ fontSize: "15px", marginRight: "10px" }} defaultValue={q.star_rating}/>
-                  <span>{q.email}</span>
                 </div>
               </section>
                 <p>{q.comments}</p>
@@ -96,7 +95,7 @@ const ReviewComponent = ({ onSubmit }) => {
         <Row className="w-100 d-flex justify-content-between">
           <Col span={11}>
             <Form.Item name="phone">
-              <Input />
+              <Input placeholder="Phone" />
             </Form.Item>
           </Col>
           <Col span={12}>
@@ -109,7 +108,7 @@ const ReviewComponent = ({ onSubmit }) => {
         {/* ===== section 3 ===== */}
         <Row className="w-100">
           <Form.Item name="comment" className="w-100">
-            <Input.TextArea className="w-100" rows={10} />
+            <Input.TextArea className="w-100" rows={10} placeholder="ReviewComments" />
           </Form.Item>
         </Row>
 
@@ -339,7 +338,7 @@ function WebPlaceShow() {
                     </div>
                     <div className="col-md-10 col-10">
                       <div className="capt-info fw-bold">OFFICE HOURS</div>
-                      <div className="sub-title-info">{place.office_hours}</div>
+                      <div className="sub-title-info">{place.office_hour}</div>
                     </div>
                     <div className="col-md-2 col-2">
                       <div className="icon-info-green">
