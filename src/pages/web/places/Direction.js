@@ -66,10 +66,15 @@ function WebPlaceDirection() {
             accessToken: mapboxgl.accessToken,
             unit: 'metric',
             profile: 'mapbox/driving',
+            container: 'directions',
             // UI controls
+            bearing: true,
+            steps: true,
+            voice_instructions: true,
             controls: {
                 inputs: false,
-                instructions: true
+                instructions: true,
+                profileSwitcher: true
             },
         });
         

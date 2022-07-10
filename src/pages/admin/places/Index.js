@@ -170,7 +170,7 @@ function PlacesIndex() {
                                     <tr key={index}>
                                         <td className="text-center">{++index + (currentPage-1) * perPage}</td>
                                         <td>{place.title}</td>
-                                        <td>
+                                        <td key={place.toString()}>
                                         {place.category && place.category.length > 0 && place.category.map((q) => {
                                             return (
                                                 <span>{q.name + ' | '}</span>
