@@ -24,9 +24,10 @@ function WebPlaceDirection() {
     //map container
     const mapContainer = useRef(null);
 
-    //state for user location coordinate
-    const [longitude, setLongitude] = useState(106.6257588);
-    const [latitude, setLatitude] = useState(-6.1758291);
+    //state for user location coordinate 
+    // eslint-disable-next-line
+    const [longitude, setLongitude] = useState(106.6257588); // eslint-disable-next-line
+    const [latitude, setLatitude] = useState(-6.1758291); // eslint-disable-next-line
 
     //slug params
     const { slug } = useParams();
@@ -81,7 +82,10 @@ function WebPlaceDirection() {
                 setLatitude(position.coords.latitude);
             });
 
-            directions.setOrigin([longitude, latitude]);
+            //directions.setOrigin([longitude, latitude]);
+            geolocate.on('geolocate', function(e) {
+                directions.setOrigin([e.coords.longitude, e.coords.latitude]); 
+               });
             directions.setDestination([query.get("longitude"), query.get("latitude")]);
 
             map.addControl(directions);

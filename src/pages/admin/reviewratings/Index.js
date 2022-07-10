@@ -11,6 +11,7 @@ import Api from "../../../api";
 import Cookies from "js-cookie";
 
 //import Link from react router dom
+// eslint-disable-next-line
 import { Link } from "react-router-dom";
 
 //import pagination component
@@ -23,8 +24,7 @@ import toast from "react-hot-toast";
 import { confirmAlert } from 'react-confirm-alert';
 
 //import CSS react-confirm-alert
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-import PlaceCreate from "../places/Create";
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css 
 
 function ReviewRatingsIndex() {
 
@@ -46,14 +46,22 @@ function ReviewRatingsIndex() {
     //token
     const token = Cookies.get("token");
 
+    //state search
+    const [search, setSearch] = useState("");
+
     //function "fetchData"
-    const fetchData = async (pageNumber) => {
+    const fetchData = async (pageNumber, searchData) => {
 
         //define variable "page"
-        const page = pageNumber ? pageNumber : currentPage;
+        // eslint-disable-next-line
+        const page = pageNumber ? pageNumber : currentPage; 
+
+        //define variable "searchQuery"
+        const searchQuery = searchData ? searchData : search;
 
         //fetching data from Rest API
-        await Api.get('/api/admin/reviewratings?page=${page}', {
+        // eslint-disable-next-line
+        await Api.get(`/api/admin/reviewratings?q=${searchQuery}&page=${page}`, { 
             headers: {
                 //header Bearer + Token
                 Authorization: `Bearer ${token}`,
@@ -81,7 +89,15 @@ function ReviewRatingsIndex() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    //function "deleteSlider"
+    //function "searchHandler"
+    const searchHandlder = (e) => {
+        e.preventDefault();
+    
+        //call function "fetchDataPost" with state search and page number
+        fetchData(1, search)
+    }
+
+    //function "deleteReviewrating"
     const deleteReviewrating = (id) => {
 
         //show confirm alert
@@ -132,6 +148,12 @@ function ReviewRatingsIndex() {
                             <div className="card-header">
                                 <span className="font-weight-bold"><i className="fa fa-comments"></i> Review Ratings</span>
                             </div>
+                            <form onSubmit={searchHandlder} className="form-group">
+                                <div className="input-group mb-3">
+                                    <input type="text" className="form-control" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="search by review ratings" />
+                                    <button type="submit" className="btn btn-md btn-success"><i className="fa fa-search"></i> SEARCH</button>
+                                </div>
+                            </form>
                             <div className="card-body">
                                 <div className="table-responsive">
                                     <table className="table table-bordered table-striped table-hovered">
