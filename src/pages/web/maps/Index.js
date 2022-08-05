@@ -51,9 +51,23 @@ function WebMapsIndex() {
         const map = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [106.6587816, -6.4446361],
-            zoom: 8
+            center: [106.816666, -6.200000],
+            zoom: 10
         });
+
+        //init geolocate
+        const geolocate = new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            // When active the map will receive updates to the device's location as it changes.
+            trackUserLocation: true,
+            // Draw an arrow next to the location dot to indicate which direction the device is heading.
+            showUserHeading: true
+        });
+
+        // Add geolocate control to the map.
+        map.addControl(geolocate);
 
         // Create a default Marker and add it to the map.
         coordinates.forEach((location) => {

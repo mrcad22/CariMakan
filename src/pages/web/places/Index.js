@@ -77,7 +77,7 @@ function WebPlacesIndex() {
                                         slug={place.slug}
                                         title={place.title}
                                         images={place.images}
-                                        address={place.address}//{"Click To View The Location"}//
+                                        address={place.address}
                                     />
                                 ))
                                 : <div className="alert alert-danger border-0 rounded shadow-sm" role="alert">
