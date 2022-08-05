@@ -23,6 +23,7 @@ function Sidebar() {
                 <Link className={splitLocation[2] === "sliders" ? "list-group-item list-group-item-action list-group-item-light p-3 text-uppercase active" : "list-group-item list-group-item-action list-group-item-light p-3 text-uppercase"} to="/admin/sliders"><i className="fa fa-images me-2"></i> Sliders</Link>
                 <Link className={splitLocation[2] === "users" ? "list-group-item list-group-item-action list-group-item-light p-3 text-uppercase active" : "list-group-item list-group-item-action list-group-item-light p-3 text-uppercase"} to="/admin/users"><i className="fa fa-users me-2"></i> Users</Link>
                 <Link className={splitLocation[2] === "reviewratings" ? "list-group-item list-group-item-action list-group-item-light p-3 text-uppercase active" : "list-group-item list-group-item-action list-group-item-light p-3 text-uppercase"} to="/admin/reviewratings"><i className="fa fa-comments me-2"></i> ReviewRatings</Link>
+                <Link className={splitLocation[2] === "homepages" ? "list-group-item list-group-item-action list-group-item-light p-3 text-uppercase active" : "list-group-item list-group-item-action list-group-item-light p-3 text-uppercase"} as={Link} to="/" target="_blank"><i className="fa fa-external-link-alt me-2"></i> Visit Web</Link>
             </div>
         </React.Fragment>
     )
