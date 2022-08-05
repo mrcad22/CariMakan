@@ -11,15 +11,15 @@ function CardPlace(props) {
                         <div className="col-md-4">
                             {
                                 props.images.slice(0, 1).map((placeImage) => (
-                                    <img src={placeImage.image} className="img-fluid rounded-start" alt="..." style={{ height: "100%", objectFit: "cover" }} key={placeImage.id} />
+                                    <img src={placeImage.image} className="img-fluid rounded-start" alt="..." style={{ height: "100%", witdh: "100%",  objectFit: "cover" }} key={placeImage.id} />
                                 ))
                             }
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h5 className="card-title">{props.title}</h5>
+                                <h5 className="card-title" style={{ display: "block", width: "auto", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>{props.title}</h5>
                                 <hr />
-                                <p className="card-text"><i className="fa fa-map-marker"></i> <i>{props.address}</i></p>
+                                <p className="card-text" style={{ display: "block", width: "auto", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}><i className="fa fa-map-marker"></i> <i>{props.address}</i></p>
                             </div>
                         </div>
                     </div>
