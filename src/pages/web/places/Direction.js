@@ -41,7 +41,7 @@ function WebPlaceDirection() {
         //init Map
         const map = new mapboxgl.Map({
             container: mapContainer.current,
-            style: 'mapbox://styles/mapbox/streets-v11',
+            style: 'mapbox://styles/mapbox/navigation-day-v1',
             center: [query.get("longitude"), query.get("latitude")],
             zoom: 15
         });
@@ -65,7 +65,7 @@ function WebPlaceDirection() {
         const directions = new Directions({
             accessToken: mapboxgl.accessToken,
             unit: 'metric',
-            profile: 'mapbox/driving',
+            profile: 'mapbox/driving-traffic',
             container: 'directions',
             // UI controls
             bearing: true,

@@ -208,6 +208,14 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   border-radius: 3px;
 }
 
+.mapbox-directions-component h1 {
+  color: white;
+}
+
+.mapbox-directions-component span {
+  color: white;
+}
+
 .mapboxgl-popup-content {
   position: relative;
   background: #fff;
