@@ -74,7 +74,7 @@ function WebMapsIndex() {
 
             // add popup
             const popup = new mapboxgl.Popup()
-                .setHTML(`<h6>${location.title}</h6><hr/> <p>Category:${location.category.map(q => q.name).join(",")}</p><hr/> <p><i class="fa fa-map-marker"></i> <i>${location.address}</i></p><hr/><div class="d-grid gap-2"><a href="/places/${location.slug}" class="btn btn-sm btn-success btn-block text-white">Lihat Selengkapnya</a></div>`)
+                .setHTML(`<h6>${location.title}</h6><hr/> <p>Category: ${location.category.map(q => q.name).join(", ")}</p><hr/> <p><i class="fa fa-map-marker"></i> <i>${location.address}</i></p><hr/><div class="d-grid gap-2"><a href="/places/${location.slug}" class="btn btn-sm btn-success btn-block text-white">Lihat Selengkapnya</a></div>`)
                 .addTo(map);
 
             // add marker to map
