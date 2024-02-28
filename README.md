@@ -1,3 +1,5 @@
+# DISCLAIMER
+
 # This app is dedicated to educational purposes only, this app belongs to Muhammad Rosyad Syamil cadsmail37@gmail.com, if you have any questions, please contact the corresponding email.
 
 # Getting Started with Create React App
