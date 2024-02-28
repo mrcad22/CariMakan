@@ -1,3 +1,5 @@
+# This app is dedicated to educational purposes only, this app belongs to Muhammad Rosyad Syamil cadsmail37@gmail.com, if you have any questions, please contact the corresponding email.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
